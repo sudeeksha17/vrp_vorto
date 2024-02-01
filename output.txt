@@ -1,82 +1,53 @@
-problem1.txt
-	running...
-	evaluating solution...
-	cost: 6046.554990259833
-problem10.txt
-	running...
-	evaluating solution...
-	cost: 61885.599377819584
-problem11.txt
-	running...
-	evaluating solution...
-	cost: 66253.94677873005
-problem12.txt
-	running...
-	evaluating solution...
-	cost: 93548.75450324142
-problem13.txt
-	running...
-	evaluating solution...
-	cost: 104209.17345093656
-problem14.txt
-	running...
-	evaluating solution...
-	cost: 33768.24063364348
-problem15.txt
-	running...
-	evaluating solution...
-	cost: 40857.94799723546
-problem16.txt
-	running...
-	evaluating solution...
-	cost: 41933.65578571824
-problem17.txt
-	running...
-	evaluating solution...
-	cost: 43967.093619862426
-problem18.txt
-	running...
-	evaluating solution...
-	cost: 81222.33194074797
-problem19.txt
-	running...
-	evaluating solution...
-	cost: 83788.17203640316
-problem2.txt
-	running...
-	evaluating solution...
-	cost: 22704.887045334326
-problem20.txt
-	running...
-	evaluating solution...
-	cost: 60106.27112605059
-problem3.txt
-	running...
-	evaluating solution...
-	cost: 40266.94807328311
-problem4.txt
-	running...
-	evaluating solution...
-	cost: 81914.89863250572
-problem5.txt
-	running...
-	evaluating solution...
-	cost: 21022.55704547932
-problem6.txt
-	running...
-	evaluating solution...
-	cost: 20537.693926897962
-problem7.txt
-	running...
-	evaluating solution...
-	cost: 41043.78299309722
-problem8.txt
-	running...
-	evaluating solution...
-	cost: 39300.94012372605
-problem9.txt
-	running...
-	evaluating solution...
-	cost: 56457.94945959705
-mean cost: 52041.86997702847
-mean run time: 74.44462776184082ms
+[88, 36, 13, 176]
+[117, 129, 100]
+[160, 91, 73, 68]
+[6, 179, 190, 49, 109, 181]
+[138, 41, 65, 15, 28, 173]
+[131, 151, 125, 18, 145]
+[120, 40, 156, 185]
+[24, 11, 55, 154, 66]
+[80, 82, 184, 121, 115]
+[123, 81, 198]
+[76, 79, 134, 124, 177]
+[64, 158, 74, 30, 159, 103]
+[118, 197, 42, 155, 77, 178]
+[9, 71, 143, 167, 119]
+[46, 48, 183, 147]
+[93, 98, 45, 193]
+[188, 23]
+[4, 47, 75]
+[63, 59, 141, 194, 78]
+[57, 137, 84, 175, 101]
+[186, 97, 196]
+[111, 16, 140, 69]
+[199, 52]
+[22, 161, 12]
+[53, 60, 62, 166]
+[10, 3, 139, 105]
+[8, 50, 150, 122]
+[107, 26, 37, 61]
+[25, 116]
+[29, 152, 106]
+[187, 135, 164]
+[99, 162, 85]
+[43, 7, 17]
+[128, 146, 130]
+[21, 19, 133]
+[83, 113, 142, 144]
+[90, 163, 168, 38]
+[127, 153, 86]
+[132, 58, 170, 54]
+[148, 110, 174, 104, 2, 44]
+[70, 1, 195]
+[51, 39, 171, 5]
+[31, 114, 136, 149]
+[56, 165]
+[32, 157, 27, 189, 172]
+[94, 191, 87, 33, 169]
+[96, 20, 67, 72]
+[182, 192]
+[112, 108, 34]
+[89, 126, 102]
+[200, 95, 14]
+[180, 35]
+[92]
