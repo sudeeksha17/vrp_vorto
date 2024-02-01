@@ -29,9 +29,8 @@ def time_taken(pt1,pt2):
 def tot_time_driven(path):
     driven_time = 0
     depot_loc=(0,0) #depot location where the driver starts/ends shift
-    for j in range(len(path)): #for paths with multiple loads
-        driven_time += time_taken(path[j]['pickup'], path[j]['dropoff']) #adding the time taken between one points pickup and dropoff
-        
+    for j in range(len(path)): 
+        driven_time += time_taken(path[j]['pickup'], path[j]['dropoff']) #adding the time taken between one points pickup and dropoff        
         if j <(len(path) - 1): #for paths with multiple loads
             driven_time += time_taken(path[j]['dropoff'], path[j+1]['pickup']) #adding the time taken between 1st points' dropoff and next points' pickup coordinates 
 
@@ -47,7 +46,7 @@ def vrp_solver(load_info):
     driven_time_max=12*60 #12 hour constraint for each driver
     min_cost=float('inf') #initialized with inf so that the cost of 1st schedule found can be substitued for further comparisons
     
-    #Solving the problem using least distance from current location greedy approach
+    #Naive solution:Solving the VRP problem using least distance from current location nearest neighbor, greedy approach
     while load_info:
         driven_path_crr = []
         driven_time_crr = 0
@@ -55,11 +54,11 @@ def vrp_solver(load_info):
         
         while load_info:
             nearest_load = min(load_info, key=lambda load: time_taken(pos_crr, load['pickup']))#finding the load that's nearest to current location 
-            pickup_time = time_taken(pos_crr, nearest_load['pickup'])
-            dropoff_time = time_taken(nearest_load['pickup'], nearest_load['dropoff'])
-            return_time = time_taken(nearest_load['dropoff'],depot_loc)
+            pickup_time = time_taken(pos_crr, nearest_load['pickup']) #time to reach pickup location
+            dropoff_time = time_taken(nearest_load['pickup'], nearest_load['dropoff']) #time to reach dropoff from pickup loc
+            return_time = time_taken(nearest_load['dropoff'],depot_loc) #time to reach the depot back
             
-            if driven_time_crr + pickup_time + dropoff_time <= driven_time_max: #to ensure the 12 hr constraint met
+            if driven_time_crr + pickup_time + dropoff_time + return_time <= driven_time_max: #to ensure the 12 hr constraint met
                 driven_path_crr.append(nearest_load) #the nearest load is added to current driven path
                 pos_crr = nearest_load['dropoff'] #the current driver is where the previous load dropped off
                 driven_time_crr += pickup_time + dropoff_time #total time driven by current driver
@@ -68,7 +67,7 @@ def vrp_solver(load_info):
                 break
         
         driver_list.append(driven_path_crr)
-        
+    
     total_cost=tot_cost(driver_list) #calculate total cost for current schedule
     if total_cost< min_cost: #if the calculated cost for current schedule is min then keep that instead of previous minimal value
         min_cost=total_cost
@@ -100,3 +99,4 @@ if __name__ == "__main__":
     load_info = get_data(filepath) #getting load info from file in desired format using get_data function above
     optim_sched = vrp_solver(load_info) #running the solver for VRP problem to get the optimal schedule
     output(optim_sched) #to display the output as list of ordered loads for each driver in separate lines
+    
